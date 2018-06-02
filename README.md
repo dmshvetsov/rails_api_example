@@ -1,24 +1,54 @@
-# README
+# Rails API Example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Business Domain
 
-Things you may want to cover:
+```
+Publisher
+---------
+id
+timestamps
+```
 
-* Ruby version
+```
+Book
+----
+id
+title
+publisher_id – Publisher foreign key
+timestamps
+```
 
-* System dependencies
+```
+Shop
+----
+id
+name
+[books_sold_count – cache column, can be implemented for better performance]
+timestamps
+```
 
-* Configuration
+```
+Shop::Receipt (shop agregates receipts)
+-------------
+id
+shop_id
+book_id
+copies_count
+datetime
+timestamps
+```
 
-* Database creation
+```
+Shop::Sale (shop agregates sales)
+----------
+id
+shop_id
+book_id
+datetime
+timestamps
+```
 
-* Database initialization
+## Endpoints
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* `GET /v1/publishers/:id/shops`
+* `POST /v1/shops/:id/sale`
