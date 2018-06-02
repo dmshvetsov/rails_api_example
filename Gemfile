@@ -21,3 +21,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'listen', '3.1.5'
 end
+
+group :test do
+  gem 'rspec-rails', '3.7.2'
+end
