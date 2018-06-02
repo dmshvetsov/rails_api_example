@@ -8,7 +8,7 @@ gem 'rails', '5.2.0'
 gem 'sqlite3', '1.3.13'
 
 gem 'puma', '3.11.4'
-gem 'rack-cors', '1.0.2'
+# gem 'rack-cors', '1.0.2'
 
 gem 'bootsnap', require: false
 
