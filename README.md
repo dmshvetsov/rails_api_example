@@ -28,27 +28,16 @@ timestamps
 ```
 
 ```
-Shop::Receipt (shop agregates receipts)
+Shop::StockChange
 -------------
 id
-shop_id
-book_id
-copies_count
-datetime
-timestamps
-```
-
-```
-Shop::Sale (shop agregates sales)
-----------
-id
-shop_id
-book_id
-datetime
+shop_id – Shop foreign key
+book_id – Book foreign key
+quantity
 timestamps
 ```
 
 ## Endpoints
 
 * `GET /v1/publishers/:id/shops`
-* `POST /v1/shops/:id/sale`
+* `POST /v1/shops/:id/stock_changes`
