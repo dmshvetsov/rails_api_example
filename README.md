@@ -11,13 +11,13 @@
 * `GET /v1/publishers/:publisher_id/shops`
 * `POST /v1/shops/:shop_id/book_sales`
 
-[publisher #1 shops endpoint](http://localhost:3000/publishers/1/shops)
+[publisher #1 shops endpoint](http://localhost:3000/v1/publishers/1/shops)
 
-or [publisher #2 shops endpoint](http://localhost:3000/publishers/2/shops)
+or [publisher #2 shops endpoint](http://localhost:3000/v1/publishers/2/shops)
 
-publisher without shops [publisher #3 shops endpoint](http://localhost:3000/publishers/3/shops)
+publisher without shops [publisher #3 shops endpoint](http://localhost:3000/v1/publishers/3/shops)
 
-make a POST request with HTTP client to [shop book sell endpoint](http://localhost:3000/shops/1/book_sells) with JSON body `{ book_id: 1, quantity: 2 }`.
+make a POST request with HTTP client to [shop book sell endpoint](http://localhost:3000/v1/shops/1/book_sells) with JSON body `{ book_id: 1, quantity: 2 }`.
 
 ## Business Domain
 
