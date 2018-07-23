@@ -136,10 +136,10 @@ RSpec.describe 'Publisher Shops API', type: :request do
     end
 
     context 'when there is no publisher' do
-      it 'responds with error' do
+      it 'responds with error object' do
         get '/v1/publishers/2923/shops'
-        expect(response.body).to eq(
-          { error: "Couldn't find Publisher with 'id'=2923" }.to_json
+        expect(response_json).to eq(
+          'error' => "Couldn't find Publisher with 'id'=2923"
         )
       end
 
