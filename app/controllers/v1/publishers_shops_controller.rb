@@ -8,13 +8,10 @@ class V1::PublishersShopsController < ApplicationController
   private
 
   def data
-    books_ids, shops_ids = BooksInStock.where(publisher_id: publisher_id).pluck(:id, :shop_id).transpose
-    return [] unless books_ids || shops_ids
+    books_in_stock = BooksInStock.where(publisher_id: publisher_id).group_by(&:shop_id)
+    shops = PublisherShop.most_sold(id: books_in_stock.keys)
 
-    Response.new(
-      shops: PublisherShop.most_sold(id: shops_ids, publisher_id: publisher_id),
-      books_in_stock: BooksInStock.where(id: books_ids).group_by(&:shop_id)
-    )
+    Response.new(shops: shops, books_in_stock: books_in_stock)
   end
 
   def publisher_id
